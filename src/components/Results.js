@@ -4,13 +4,26 @@ import API from "../utils/API";
 
 class Results extends Component {
   state = {
-    result: {},
+    empRoster: {},
     search: "",
   };
 
+  // When the component mounts, get the results from API
+  async componentDidMount() {
+    try {
+      const res = await API.getFromAPI();
+      console.log(res.data.results);
+      this.setState({
+        empRoster: res.data.results,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
     return (
-        <table className="table table-striped table-bordered table-hover ">
+      <table className="table table-striped table-bordered table-hover ">
         <thead>
           <tr>
             <th scope="col">Picture</th>
@@ -28,7 +41,6 @@ class Results extends Component {
             <td>email@email.com</td>
             <td>june 1</td>
           </tr>
-
         </tbody>
       </table>
     );
