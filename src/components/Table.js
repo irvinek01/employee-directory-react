@@ -13,6 +13,7 @@ class Results extends Component {
   async componentDidMount() {
     try {
       const res = await API.getFromAPI();
+      console.log(res.data.results);
       this.setState({
         empRoster: res.data.results,
       });
@@ -22,13 +23,13 @@ class Results extends Component {
   }
 
   render() {
-    console.log(this.state.empRoster);
+    // console.log(this.state.empRoster);
     return (
       <table className="table table-striped table-bordered table-hover ">
         <thead>
           <tr>
-            <th scope="col">Picture</th>
-            <th scope="col">Name</th>
+            <th scope="col">Display Picture</th>
+            <th scope="col">Name(First, Last)</th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col">DOB</th>
