@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Searchform from "./Searchform";
+import TableResults from "./TableResults";
 import API from "../utils/API";
 
 class Results extends Component {
   state = {
-    empRoster: {},
+    empRoster: [],
     search: "",
   };
 
@@ -12,7 +13,6 @@ class Results extends Component {
   async componentDidMount() {
     try {
       const res = await API.getFromAPI();
-      console.log(res.data.results);
       this.setState({
         empRoster: res.data.results,
       });
@@ -22,6 +22,7 @@ class Results extends Component {
   }
 
   render() {
+    console.log(this.state.empRoster);
     return (
       <table className="table table-striped table-bordered table-hover ">
         <thead>
@@ -33,15 +34,7 @@ class Results extends Component {
             <th scope="col">DOB</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Image</th>
-            <td>Mark</td>
-            <td>3305240</td>
-            <td>email@email.com</td>
-            <td>june 1</td>
-          </tr>
-        </tbody>
+        <TableResults empInfos={this.state.empRoster} />
       </table>
     );
   }
