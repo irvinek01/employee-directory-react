@@ -6,7 +6,7 @@ function Searchform(props) {
       <div className="col">
         <div className="row justify-content-center ">
           <label htmlFor="language">
-            Type in a name inside this search box
+            Type in a name inside this search box/Sortable by clicking Name, Nationality, Email
           </label>
         </div>
         <div className="row justify-content-center ">

@@ -12,7 +12,7 @@ function TableResults(props) {
       {props.empInfos.map((empObj) => (
         <tr key={empObj.key}>
           <th scope="row">
-            <img alt="Employee Display" src={empObj.picture} className="img-fluid shadow-lg p-3 mb-3 bg-white rounded" />
+            <img alt="Employee Display" src={empObj.picture} className="img-fluid p-3 bg-dark rounded" />
           </th>
           <td>
             {empObj.flname}
