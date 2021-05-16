@@ -10,6 +10,7 @@ class Results extends Component {
     empFilter: [],
     search: "",
     flname: 1,
+    nat: 1,
     email: 1,
   };
 
@@ -56,7 +57,7 @@ class Results extends Component {
 
   handleSort = async (event) => {
     const colClick = event.target.getAttribute("data-column");
-    console.log(colClick);
+    // console.log(colClick);
     let sorted = this.state.empFilter.map((e) => e);
     // console.log(sorted);
     sorted.sort((a, b) => {
