@@ -9,17 +9,20 @@ function formatDate(string) {
 function TableResults(props) {
   return (
     <tbody>
-      {props.empInfos.map((eachEmp) => (
-        <tr key={eachEmp.login.uuid}>
+      {props.empInfos.map((empObj) => (
+        <tr key={empObj.key}>
           <th scope="row">
-            <img alt="Dog" src={eachEmp.picture.large} className="img-fluid" />
+            <img alt="Employee Display" src={empObj.picture} className="img-fluid" />
           </th>
           <td>
-            {eachEmp.name.first}, {eachEmp.name.last}
+            {empObj.flname}
           </td>
-          <td>{eachEmp.cell}</td>
-          <td>{eachEmp.email}</td>
-          <td>{formatDate(eachEmp.dob.date)}</td>
+          <td>
+            {empObj.nat}
+          </td>
+          <td>{empObj.contact}</td>
+          <td>{empObj.email}</td>
+          <td>{formatDate(empObj.dob)}</td>
         </tr>
       ))}
     </tbody>

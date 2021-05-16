@@ -14,6 +14,7 @@ function Searchform(props) {
             <div className="form-group">
               <input
                 className="form-control"
+                size="27"
                 type="text"
                 placeholder="eg. John Doe"
                 name="search"
